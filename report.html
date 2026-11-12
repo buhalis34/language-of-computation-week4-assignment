@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book Ingestion Report</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #fff; --text: #1d2330; --muted: #5d6677; --line: #e2e5ea;
+    --blue: #2f6fdf; --green: #1f8a4c; --amber: #b26a00; --red: #c23a3a; --gray: #6b7280;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         background: var(--bg); color: var(--text); }
+  header { background: var(--card); border-bottom: 1px solid var(--line); padding: 20px 32px; }
+  h1 { margin: 0 0 4px; font-size: 22px; }
+  header p { margin: 0 0 14px; color: var(--muted); }
+  main { max-width: 1200px; margin: 0 auto; padding: 24px 32px 64px; }
+  label.button { display: inline-block; background: var(--blue); color: #fff; padding: 8px 16px;
+                 border-radius: 6px; cursor: pointer; font-weight: 600; }
+  label.button:hover { filter: brightness(1.08); }
+  input[type=file] { display: none; }
+  #status { margin-left: 12px; color: var(--muted); }
+  #status.error { color: var(--red); font-weight: 600; }
+  .run { background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+         padding: 20px 24px; margin-bottom: 22px; }
+  .run h2 { margin: 0; font-size: 18px; }
+  .run .meta { color: var(--muted); font-size: 13px; margin: 2px 0 16px; word-break: break-all; }
+  .badge { display: inline-block; font-size: 12px; font-weight: 600; background: #e8effc; color: var(--blue);
+           padding: 1px 8px; border-radius: 10px; margin-left: 8px; vertical-align: 2px; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 14px; }
+  .stat { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+  .stat .n { font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .stat .l { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+  .stat.loaded .n { color: var(--green); } .stat.updated .n { color: var(--blue); }
+  .stat.skipped .n { color: var(--gray); } .stat.rejected .n { color: var(--red); }
+  .stat.repairs .n, .stat.warnings .n { color: var(--amber); }
+  details { border-top: 1px solid var(--line); padding: 8px 0; }
+  summary { cursor: pointer; font-weight: 600; padding: 4px 0; }
+  summary .count { color: var(--muted); font-weight: 400; }
+  .table-wrap { max-height: 480px; overflow: auto; margin-top: 8px; border: 1px solid var(--line); border-radius: 6px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { position: sticky; top: 0; background: #f0f2f5; font-weight: 600; white-space: nowrap; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  code { font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; background: #f0f2f5; padding: 1px 4px; border-radius: 3px; }
+  .empty { color: var(--muted); font-style: italic; margin: 6px 0 0; }
+  .hint { color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Book Ingestion Report</h1>
+  <p>Shows every run recorded in <code>ingestion-log.json</code>, newest first.</p>
+  <label class="button">Open ingestion-log.json
+    <input type="file" id="file" accept=".json,application/json">
+  </label>
+  <span id="status">No file opened yet.</span>
+</header>
+<main id="runs"><p class="hint">Click the button above and choose the <code>ingestion-log.json</code> file next to <code>ingest.py</code>.</p></main>
+
+<script>
+"use strict";
+const SECTIONS = [
+  { key: "rejected_rows", title: "Rejected rows",
+    cols: [["line", "Line", "num"], ["book_id", "book_id", "num"], ["title", "Title"], ["authors", "Authors"],
+           ["isbn", "isbn (CSV)", "code"], ["isbn13", "isbn13 (CSV)", "code"], ["reason", "Reason"]] },
+  { key: "skipped_rows", title: "Skipped rows (already in the database)",
+    cols: [["line", "Line", "num"], ["book_id", "book_id", "num"], ["title", "Title"], ["authors", "Authors"],
+           ["isbn", "isbn (CSV)", "code"], ["isbn13", "isbn13 (CSV)", "code"], ["reason", "Reason"]] },
+  { key: "repairs", title: "Repaired ISBNs",
+    cols: [["line", "Line", "num"], ["book_id", "book_id", "num"], ["title", "Title"], ["column", "Column"],
+           ["original", "Original", "code"], ["repaired", "Repaired", "code"], ["change", "What changed"],
+           ["row_result", "Row result"]] },
+  { key: "warnings", title: "Books loaded with a warning",
+    cols: [["line", "Line", "num"], ["book_id", "book_id", "num"], ["title", "Title"],
+           ["row_result", "Row result"], ["warning", "Warning"]] },
+];
+const STATS = [["rows_read", "Rows read", ""], ["loaded", "Loaded", "loaded"], ["updated", "Updated", "updated"],
+               ["skipped", "Skipped", "skipped"], ["rejected", "Rejected", "rejected"]];
+
+function el(tag, attrs, ...children) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) e.setAttribute(k, v);
+  for (const c of children) e.append(c instanceof Node ? c : document.createTextNode(c == null ? "" : String(c)));
+  return e;
+}
+
+function cell(value, kind) {
+  const td = el("td", kind === "num" ? { class: "num" } : {});
+  const text = value == null ? "" : String(value);
+  if (kind === "code" && text !== "") td.append(el("code", {}, text)); else td.append(text);
+  return td;
+}
+
+function buildTable(section, items) {
+  const head = el("tr", {}, ...section.cols.map(([, label]) => el("th", {}, label)));
+  const body = el("tbody");
+  const frag = document.createDocumentFragment();
+  for (const item of items) frag.append(el("tr", {}, ...section.cols.map(([k, , kind]) => cell(item[k], kind))));
+  body.append(frag);
+  return el("div", { class: "table-wrap" }, el("table", {}, el("thead", {}, head), body));
+}
+
+function renderRun(run, number, total) {
+  const box = el("section", { class: "run" });
+  const when = run.run_at ? new Date(run.run_at) : null;
+  const whenText = when && !isNaN(when) ? when.toLocaleString() : (run.run_at || "unknown time");
+  box.append(el("h2", {}, `Run ${number} of ${total}: ${run.csv_file || "unknown file"}`,
+                number === total ? el("span", { class: "badge" }, "newest") : ""));
+  box.append(el("div", { class: "meta" }, `Ran ${whenText} (${run.run_at || "?"}) · ${run.csv_path || ""}`));
+
+  const stats = el("div", { class: "stats" });
+  for (const [k, label, cls] of STATS)
+    stats.append(el("div", { class: "stat " + cls }, el("div", { class: "n" }, (run[k] ?? 0).toLocaleString()), el("div", { class: "l" }, label)));
+  stats.append(el("div", { class: "stat repairs" }, el("div", { class: "n" }, (run.repairs || []).length.toLocaleString()), el("div", { class: "l" }, "ISBN repairs")));
+  stats.append(el("div", { class: "stat warnings" }, el("div", { class: "n" }, (run.warnings || []).length.toLocaleString()), el("div", { class: "l" }, "Warnings")));
+  box.append(stats);
+
+  for (const section of SECTIONS) {
+    const items = run[section.key] || [];
+    const det = el("details", {}, el("summary", {}, section.title + " ", el("span", { class: "count" }, `(${items.length.toLocaleString()})`)));
+    if (items.length === 0) {
+      det.append(el("p", { class: "empty" }, "None."));
+    } else {
+      // Build big tables only when opened, so large logs stay fast.
+      det.addEventListener("toggle", () => {
+        if (det.open && !det.dataset.built) { det.append(buildTable(section, items)); det.dataset.built = "1"; }
+      });
+    }
+    box.append(det);
+  }
+  return box;
+}
+
+function show(log, name) {
+  const runs = document.getElementById("runs");
+  runs.replaceChildren();
+  const numbered = log.map((run, i) => ({ run, number: i + 1 }));
+  numbered.sort((a, b) => {
+    const ta = Date.parse(a.run.run_at), tb = Date.parse(b.run.run_at);
+    if (!isNaN(ta) && !isNaN(tb) && ta !== tb) return tb - ta;
+    return b.number - a.number;
+  });
+  if (numbered.length === 0) runs.append(el("p", { class: "empty" }, "The log has no runs yet."));
+  for (const { run, number } of numbered) runs.append(renderRun(run, number, log.length));
+  setStatus(`Showing ${log.length} run${log.length === 1 ? "" : "s"} from ${name}.`);
+}
+
+function setStatus(text, isError) {
+  const s = document.getElementById("status");
+  s.textContent = text;
+  s.className = isError ? "error" : "";
+}
+
+document.getElementById("file").addEventListener("change", (event) => {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    let log;
+    try { log = JSON.parse(reader.result); }
+    catch (e) { setStatus(`${file.name} is not valid JSON: ${e.message}`, true); return; }
+    if (!Array.isArray(log)) { setStatus(`${file.name} is not an ingestion log (expected a list of runs).`, true); return; }
+    show(log, file.name);
+  };
+  reader.onerror = () => setStatus(`Could not read ${file.name}.`, true);
+  reader.readAsText(file);
+  event.target.value = "";
+});
+</script>
+</body>
+</html>
