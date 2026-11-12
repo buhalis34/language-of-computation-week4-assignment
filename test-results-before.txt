@@ -1,0 +1,1605 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0 -- /Users/mike/workspace/language-of-computation/week4-assignment/.venv/bin/python
+rootdir: /Users/mike/workspace/language-of-computation/week4-assignment
+configfile: pytest.ini
+testpaths: tests
+collecting ... collected 54 items
+
+tests/test_rules_examples.py::test_single_row_example[example_01_loaded] FAILED [  1%]
+tests/test_rules_examples.py::test_single_row_example[example_02_loaded] FAILED [  3%]
+tests/test_rules_examples.py::test_single_row_example[example_03_loaded] FAILED [  5%]
+tests/test_rules_examples.py::test_single_row_example[example_04_loaded] FAILED [  7%]
+tests/test_rules_examples.py::test_single_row_example[example_05_loaded] FAILED [  9%]
+tests/test_rules_examples.py::test_single_row_example[example_06_loaded] FAILED [ 11%]
+tests/test_rules_examples.py::test_single_row_example[example_07_loaded] FAILED [ 12%]
+tests/test_rules_examples.py::test_single_row_example[example_08_rejected] FAILED [ 14%]
+tests/test_rules_examples.py::test_single_row_example[example_09_rejected] FAILED [ 16%]
+tests/test_rules_examples.py::test_single_row_example[example_10_loaded] FAILED [ 18%]
+tests/test_rules_examples.py::test_single_row_example[example_11_rejected] FAILED [ 20%]
+tests/test_rules_examples.py::test_single_row_example[example_12_loaded] FAILED [ 22%]
+tests/test_rules_examples.py::test_single_row_example[example_13_rejected] FAILED [ 24%]
+tests/test_rules_examples.py::test_single_row_example[example_14_loaded] FAILED [ 25%]
+tests/test_rules_examples.py::test_single_row_example[example_15_loaded] FAILED [ 27%]
+tests/test_rules_examples.py::test_single_row_example[example_16_rejected] FAILED [ 29%]
+tests/test_rules_examples.py::test_single_row_example[example_17_loaded] FAILED [ 31%]
+tests/test_rules_examples.py::test_single_row_example[example_18_rejected] FAILED [ 33%]
+tests/test_rules_examples.py::test_single_row_example[example_19_rejected] FAILED [ 35%]
+tests/test_rules_examples.py::test_single_row_example[example_20_rejected] FAILED [ 37%]
+tests/test_rules_examples.py::test_single_row_example[example_21_rejected] FAILED [ 38%]
+tests/test_rules_examples.py::test_single_row_example[example_22_loaded] FAILED [ 40%]
+tests/test_rules_examples.py::test_single_row_example[example_23_rejected] FAILED [ 42%]
+tests/test_rules_examples.py::test_single_row_example[example_24_loaded] FAILED [ 44%]
+tests/test_rules_examples.py::test_single_row_example[example_25_rejected] FAILED [ 46%]
+tests/test_rules_examples.py::test_single_row_example[example_36_loaded] FAILED [ 48%]
+tests/test_rules_examples.py::test_example_with_existing_books[example_26_skipped] FAILED [ 50%]
+tests/test_rules_examples.py::test_example_with_existing_books[example_27_skipped] FAILED [ 51%]
+tests/test_rules_examples.py::test_example_with_existing_books[example_28_updated] FAILED [ 53%]
+tests/test_rules_examples.py::test_example_with_existing_books[example_29_rejected] FAILED [ 55%]
+tests/test_rules_examples.py::test_example_with_existing_books[example_30_rejected] FAILED [ 57%]
+tests/test_rules_examples.py::test_example_with_existing_books[example_31_rejected] FAILED [ 59%]
+tests/test_rules_examples.py::test_example_32_identical_repeat_in_same_file_is_skipped FAILED [ 61%]
+tests/test_rules_examples.py::test_example_33_repeat_with_different_title_in_same_file_is_rejected FAILED [ 62%]
+tests/test_rules_examples.py::test_example_34_changed_repeat_in_same_file_updates_last_wins FAILED [ 64%]
+tests/test_rules_examples.py::test_example_35_same_file_run_twice FAILED [ 66%]
+tests/test_rules_examples.py::test_all_36_rules_examples_have_a_test PASSED [ 68%]
+tests/test_runs.py::test_running_books_csv_twice_adds_no_books PASSED    [ 70%]
+tests/test_runs.py::test_running_books_csv_twice_leaves_no_duplicate_isbns PASSED [ 72%]
+tests/test_runs.py::test_running_batch2_twice_adds_no_books PASSED       [ 74%]
+tests/test_runs.py::test_each_run_appends_one_log_entry PASSED           [ 75%]
+tests/test_runs.py::test_earlier_log_entries_are_never_changed PASSED    [ 77%]
+tests/test_runs.py::test_each_log_entry_names_its_csv_file PASSED        [ 79%]
+tests/test_runs.py::test_counts_add_up_to_rows_read[books.csv (run 1)] PASSED [ 81%]
+tests/test_runs.py::test_counts_add_up_to_rows_read[books.csv (run 2)] PASSED [ 83%]
+tests/test_runs.py::test_counts_add_up_to_rows_read[books-batch2.csv] PASSED [ 85%]
+tests/test_runs.py::test_row_lists_match_their_counts[books.csv (run 1)] FAILED [ 87%]
+tests/test_runs.py::test_row_lists_match_their_counts[books.csv (run 2)] FAILED [ 88%]
+tests/test_runs.py::test_row_lists_match_their_counts[books-batch2.csv] FAILED [ 90%]
+tests/test_runs.py::test_rows_read_matches_the_csv_files PASSED          [ 92%]
+tests/test_runs.py::test_running_books_csv_twice_gives_same_database PASSED [ 94%]
+tests/test_runs.py::test_running_batch2_twice_gives_same_database PASSED [ 96%]
+tests/test_runs.py::test_fresh_runs_of_books_csv_give_same_database PASSED [ 98%]
+tests/test_runs.py::test_tests_use_test_db PASSED                        [100%]
+
+=================================== FAILURES ===================================
+__________________ test_single_row_example[example_01_loaded] __________________
+
+sandbox = <conftest.Sandbox object at 0x101d3dc40>, n = 1, isbn = '0439023483'
+isbn13 = '9780439023481', outcome = 'loaded'
+stored = ('0439023483', '9780439023481'), code = None, problems = (None, None)
+repairs = None, warnings = None
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-pdluj3ww/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-pdluj3ww/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 1, updated 0, skipped 0, rejected 0, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-pdluj3ww/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-pdluj3ww/test-ingestion-log.json (run 1)
+__________________ test_single_row_example[example_02_loaded] __________________
+
+sandbox = <conftest.Sandbox object at 0x101d3d0d0>, n = 2, isbn = '439023483'
+isbn13 = '9.78043902348e+12', outcome = 'loaded'
+stored = ('0439023483', '9780439023481'), code = None, problems = (None, None)
+repairs = {'isbn': ['R_PADDED_ZEROS'], 'isbn13': ['R_REBUILT_ROUNDED_ISBN13']}
+warnings = None
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-fprpandi/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-fprpandi/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 1, updated 0, skipped 0, rejected 0, repairs 2, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-fprpandi/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-fprpandi/test-ingestion-log.json (run 1)
+__________________ test_single_row_example[example_03_loaded] __________________
+
+sandbox = <conftest.Sandbox object at 0x101d499a0>, n = 3, isbn = '7442912'
+isbn13 = '', outcome = 'loaded', stored = ('0007442912', '9780007442911')
+code = None, problems = (None, None), repairs = {'isbn': ['R_PADDED_ZEROS']}
+warnings = [('W_ISBN13_CALCULATED', None)]
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-1jirh0xt/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-1jirh0xt/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 1, updated 0, skipped 0, rejected 0, repairs 1, warnings 1
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-1jirh0xt/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-1jirh0xt/test-ingestion-log.json (run 1)
+__________________ test_single_row_example[example_04_loaded] __________________
+
+sandbox = <conftest.Sandbox object at 0x101d38250>, n = 4
+isbn = '0-439-02348-3', isbn13 = '978-0-439-02348-1', outcome = 'loaded'
+stored = ('0439023483', '9780439023481'), code = None, problems = (None, None)
+repairs = {'isbn': ['R_REMOVED_SEPARATORS'], 'isbn13': ['R_REMOVED_SEPARATORS']}
+warnings = None
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-b4kyeflh/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-b4kyeflh/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 1, updated 0, skipped 0, rejected 0, repairs 2, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-b4kyeflh/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-b4kyeflh/test-ingestion-log.json (run 1)
+__________________ test_single_row_example[example_05_loaded] __________________
+
+sandbox = <conftest.Sandbox object at 0x101d45550>, n = 5
+isbn = '0 439 02348 3', isbn13 = '9780439023481', outcome = 'loaded'
+stored = ('0439023483', '9780439023481'), code = None, problems = (None, None)
+repairs = {'isbn': ['R_REMOVED_SEPARATORS']}, warnings = None
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-31bbk3l2/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-31bbk3l2/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 1, updated 0, skipped 0, rejected 0, repairs 1, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-31bbk3l2/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-31bbk3l2/test-ingestion-log.json (run 1)
+__________________ test_single_row_example[example_06_loaded] __________________
+
+sandbox = <conftest.Sandbox object at 0x101e726a0>, n = 6, isbn = '031200009x'
+isbn13 = '9780312000097', outcome = 'loaded'
+stored = ('031200009X', '9780312000097'), code = None, problems = (None, None)
+repairs = {'isbn': ['R_UPPERCASED_X']}, warnings = None
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-oz0na5ya/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-oz0na5ya/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 1, updated 0, skipped 0, rejected 0, repairs 1, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-oz0na5ya/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-oz0na5ya/test-ingestion-log.json (run 1)
+__________________ test_single_row_example[example_07_loaded] __________________
+
+sandbox = <conftest.Sandbox object at 0x101ea2790>, n = 7
+isbn = '0-312-00009-x', isbn13 = '', outcome = 'loaded'
+stored = ('031200009X', '9780312000097'), code = None, problems = (None, None)
+repairs = {'isbn': ['R_REMOVED_SEPARATORS', 'R_UPPERCASED_X']}
+warnings = [('W_ISBN13_CALCULATED', None)]
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-0fajjn8a/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-0fajjn8a/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 1, updated 0, skipped 0, rejected 0, repairs 1, warnings 1
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-0fajjn8a/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-0fajjn8a/test-ingestion-log.json (run 1)
+_________________ test_single_row_example[example_08_rejected] _________________
+
+sandbox = <conftest.Sandbox object at 0x101ea2ac0>, n = 8, isbn = '19'
+isbn13 = '', outcome = 'rejected', stored = None, code = 'REJ_NO_USABLE_ISBN'
+problems = ('WRONG_LENGTH', 'EMPTY'), repairs = None, warnings = None
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+>       check_counts(entry, 1, **{outcome: 1})
+
+tests/test_rules_examples.py:161: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-jhev64jd/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+rows_read = 1, expected = {'rejected': 1}
+@py_assert2 = {'loaded': 0, 'rejected': 1, 'skipped': 0, 'updated': 0}
+@py_assert4 = None, @py_assert6 = None
+actual = {'loaded': 1, 'rejected': 0, 'skipped': 0, 'updated': 0}
+@py_assert1 = False
+
+    def check_counts(entry, rows_read, **expected):
+        assert field(entry, "rows_read") == rows_read
+        actual = {name: field(entry, name) for name in COUNT_FIELDS}
+>       assert actual == {name: expected.get(name, 0) for name in COUNT_FIELDS}
+E       AssertionError: assert {'loaded': 1,... 'updated': 0} == {'loaded': 0,... 'updated': 0}
+E         
+E         Omitting 2 identical items, use -vv to show
+E         Differing items:
+E         {'loaded': 1} != {'loaded': 0}
+E         {'rejected': 0} != {'rejected': 1}
+E         
+E         Full diff:...
+E         
+E         ...Full output truncated (12 lines hidden), use '-vv' to show
+
+tests/test_rules_examples.py:78: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 1, updated 0, skipped 0, rejected 0, repairs 1, warnings 1
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-jhev64jd/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-jhev64jd/test-ingestion-log.json (run 1)
+_________________ test_single_row_example[example_09_rejected] _________________
+
+sandbox = <conftest.Sandbox object at 0x101ea2070>, n = 9, isbn = '812971060'
+isbn13 = '', outcome = 'rejected', stored = None, code = 'REJ_NO_USABLE_ISBN'
+problems = ('BAD_CHECK_DIGIT', 'EMPTY'), repairs = None, warnings = None
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-6_8133wl/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-6_8133wl/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 0, updated 0, skipped 0, rejected 1, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-6_8133wl/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-6_8133wl/test-ingestion-log.json (run 1)
+__________________ test_single_row_example[example_10_loaded] __________________
+
+sandbox = <conftest.Sandbox object at 0x101e385b0>, n = 10, isbn = '1854433017'
+isbn13 = '9781854433015', outcome = 'loaded'
+stored = ('1854433016', '9781854433015'), code = None, problems = (None, None)
+repairs = None
+warnings = [('W_ISBN10_UNUSABLE', 'BAD_CHECK_DIGIT'), ('W_ISBN10_CALCULATED', None)]
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-k1c5m1fd/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-k1c5m1fd/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 1, updated 0, skipped 0, rejected 0, repairs 0, warnings 1
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-k1c5m1fd/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-k1c5m1fd/test-ingestion-log.json (run 1)
+_________________ test_single_row_example[example_11_rejected] _________________
+
+sandbox = <conftest.Sandbox object at 0x101e38730>, n = 11, isbn = '1854433017'
+isbn13 = '', outcome = 'rejected', stored = None, code = 'REJ_NO_USABLE_ISBN'
+problems = ('BAD_CHECK_DIGIT', 'EMPTY'), repairs = None, warnings = None
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-uimi3ne2/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-uimi3ne2/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 0, updated 0, skipped 0, rejected 1, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-uimi3ne2/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-uimi3ne2/test-ingestion-log.json (run 1)
+__________________ test_single_row_example[example_12_loaded] __________________
+
+sandbox = <conftest.Sandbox object at 0x101f97610>, n = 12, isbn = '04390A3483'
+isbn13 = '9780439023481', outcome = 'loaded'
+stored = ('0439023483', '9780439023481'), code = None, problems = (None, None)
+repairs = None
+warnings = [('W_ISBN10_UNUSABLE', 'UNEXPECTED_CHARACTERS'), ('W_ISBN10_CALCULATED', None)]
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-x95tp38p/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-x95tp38p/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 1, updated 0, skipped 0, rejected 0, repairs 0, warnings 1
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-x95tp38p/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-x95tp38p/test-ingestion-log.json (run 1)
+_________________ test_single_row_example[example_13_rejected] _________________
+
+sandbox = <conftest.Sandbox object at 0x101ea28e0>, n = 13, isbn = '15287463097'
+isbn13 = '', outcome = 'rejected', stored = None, code = 'REJ_NO_USABLE_ISBN'
+problems = ('WRONG_LENGTH', 'EMPTY'), repairs = None, warnings = None
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-9_x8b7qq/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-9_x8b7qq/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 0, updated 0, skipped 0, rejected 1, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-9_x8b7qq/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-9_x8b7qq/test-ingestion-log.json (run 1)
+__________________ test_single_row_example[example_14_loaded] __________________
+
+sandbox = <conftest.Sandbox object at 0x101ea2d90>, n = 14, isbn = '553609416'
+isbn13 = '76783609419.0', outcome = 'loaded'
+stored = ('0553609416', '9780553609417'), code = None, problems = (None, None)
+repairs = {'isbn': ['R_PADDED_ZEROS']}
+warnings = [('W_ISBN13_UNUSABLE', 'WRONG_LENGTH'), ('W_ISBN13_CALCULATED', None)]
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-nry08hs6/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-nry08hs6/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 1, updated 0, skipped 0, rejected 0, repairs 1, warnings 1
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-nry08hs6/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-nry08hs6/test-ingestion-log.json (run 1)
+__________________ test_single_row_example[example_15_loaded] __________________
+
+sandbox = <conftest.Sandbox object at 0x101ea2970>, n = 15, isbn = ''
+isbn13 = '9780439023481.0', outcome = 'loaded'
+stored = ('0439023483', '9780439023481'), code = None, problems = (None, None)
+repairs = {'isbn13': ['R_REMOVED_DECIMAL']}
+warnings = [('W_ISBN10_CALCULATED', None)]
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+>       check_counts(entry, 1, **{outcome: 1})
+
+tests/test_rules_examples.py:161: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-svu37e2h/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+rows_read = 1, expected = {'loaded': 1}
+@py_assert2 = {'loaded': 1, 'rejected': 0, 'skipped': 0, 'updated': 0}
+@py_assert4 = None, @py_assert6 = None
+actual = {'loaded': 0, 'rejected': 1, 'skipped': 0, 'updated': 0}
+@py_assert1 = False
+
+    def check_counts(entry, rows_read, **expected):
+        assert field(entry, "rows_read") == rows_read
+        actual = {name: field(entry, name) for name in COUNT_FIELDS}
+>       assert actual == {name: expected.get(name, 0) for name in COUNT_FIELDS}
+E       AssertionError: assert {'loaded': 0,... 'updated': 0} == {'loaded': 1,... 'updated': 0}
+E         
+E         Omitting 2 identical items, use -vv to show
+E         Differing items:
+E         {'loaded': 0} != {'loaded': 1}
+E         {'rejected': 1} != {'rejected': 0}
+E         
+E         Full diff:...
+E         
+E         ...Full output truncated (12 lines hidden), use '-vv' to show
+
+tests/test_rules_examples.py:78: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 0, updated 0, skipped 0, rejected 1, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-svu37e2h/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-svu37e2h/test-ingestion-log.json (run 1)
+_________________ test_single_row_example[example_16_rejected] _________________
+
+sandbox = <conftest.Sandbox object at 0x101f97940>, n = 16, isbn = ''
+isbn13 = '', outcome = 'rejected', stored = None, code = 'REJ_NO_USABLE_ISBN'
+problems = ('EMPTY', 'EMPTY'), repairs = None, warnings = None
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-rjkw2x0m/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-rjkw2x0m/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 0, updated 0, skipped 0, rejected 1, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-rjkw2x0m/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-rjkw2x0m/test-ingestion-log.json (run 1)
+__________________ test_single_row_example[example_17_loaded] __________________
+
+sandbox = <conftest.Sandbox object at 0x101e38c70>, n = 17
+isbn = '9781982147600', isbn13 = '', outcome = 'loaded'
+stored = ('1982147601', '9781982147600'), code = None, problems = (None, None)
+repairs = {'isbn13': ['R_MOVED_ISBN13_TO_ISBN13_COLUMN']}
+warnings = [('W_ISBN10_CALCULATED', None)]
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-0n_4pvvw/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-0n_4pvvw/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 1, updated 0, skipped 0, rejected 0, repairs 1, warnings 1
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-0n_4pvvw/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-0n_4pvvw/test-ingestion-log.json (run 1)
+_________________ test_single_row_example[example_18_rejected] _________________
+
+sandbox = <conftest.Sandbox object at 0x101e38af0>, n = 18
+isbn = '9781982147600', isbn13 = '9780439023481', outcome = 'rejected'
+stored = None, code = 'REJ_ISBN_CONFLICT', problems = (None, None)
+repairs = None, warnings = None
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-91id3z05/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-91id3z05/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 0, updated 0, skipped 0, rejected 1, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-91id3z05/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-91id3z05/test-ingestion-log.json (run 1)
+_________________ test_single_row_example[example_19_rejected] _________________
+
+sandbox = <conftest.Sandbox object at 0x101e82460>, n = 19, isbn = '0439023483'
+isbn13 = '9781982147600', outcome = 'rejected', stored = None
+code = 'REJ_ISBN_CONFLICT', problems = (None, None), repairs = None
+warnings = None
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-c31l7373/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-c31l7373/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 0, updated 0, skipped 0, rejected 1, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-c31l7373/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-c31l7373/test-ingestion-log.json (run 1)
+_________________ test_single_row_example[example_20_rejected] _________________
+
+sandbox = <conftest.Sandbox object at 0x101f90df0>, n = 20, isbn = '0439023483'
+isbn13 = '9.78198214760e+12', outcome = 'rejected', stored = None
+code = 'REJ_ISBN_CONFLICT', problems = (None, None), repairs = None
+warnings = None
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-znv7ks9d/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-znv7ks9d/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 0, updated 0, skipped 0, rejected 1, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-znv7ks9d/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-znv7ks9d/test-ingestion-log.json (run 1)
+_________________ test_single_row_example[example_21_rejected] _________________
+
+sandbox = <conftest.Sandbox object at 0x101d4c130>, n = 21, isbn = ''
+isbn13 = '9.78043902348e+12', outcome = 'rejected', stored = None
+code = 'REJ_NO_USABLE_ISBN', problems = ('EMPTY', 'ROUNDED_UNVERIFIABLE')
+repairs = None, warnings = None
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-pw9qveex/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-pw9qveex/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 0, updated 0, skipped 0, rejected 1, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-pw9qveex/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-pw9qveex/test-ingestion-log.json (run 1)
+__________________ test_single_row_example[example_22_loaded] __________________
+
+sandbox = <conftest.Sandbox object at 0x101e726d0>, n = 22, isbn = ''
+isbn13 = '9791234567896', outcome = 'loaded', stored = ('', '9791234567896')
+code = None, problems = (None, None), repairs = None, warnings = None
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-t6jlss69/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-t6jlss69/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 1, updated 0, skipped 0, rejected 0, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-t6jlss69/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-t6jlss69/test-ingestion-log.json (run 1)
+_________________ test_single_row_example[example_23_rejected] _________________
+
+sandbox = <conftest.Sandbox object at 0x101e72520>, n = 23, isbn = ''
+isbn13 = '9790000000001', outcome = 'rejected', stored = None
+code = 'REJ_NO_USABLE_ISBN', problems = ('EMPTY', 'NOT_AN_ISBN'), repairs = None
+warnings = None
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-s4evlspw/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-s4evlspw/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 0, updated 0, skipped 0, rejected 1, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-s4evlspw/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-s4evlspw/test-ingestion-log.json (run 1)
+__________________ test_single_row_example[example_24_loaded] __________________
+
+sandbox = <conftest.Sandbox object at 0x101d79670>, n = 24, isbn = '0439023483'
+isbn13 = '9780439023482', outcome = 'loaded'
+stored = ('0439023483', '9780439023481'), code = None, problems = (None, None)
+repairs = None
+warnings = [('W_ISBN13_UNUSABLE', 'BAD_CHECK_DIGIT'), ('W_ISBN13_CALCULATED', None)]
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-6slnh3ao/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-6slnh3ao/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 1, updated 0, skipped 0, rejected 0, repairs 0, warnings 1
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-6slnh3ao/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-6slnh3ao/test-ingestion-log.json (run 1)
+_________________ test_single_row_example[example_25_rejected] _________________
+
+sandbox = <conftest.Sandbox object at 0x101ea2af0>, n = 25, isbn = ''
+isbn13 = '5012345678900', outcome = 'rejected', stored = None
+code = 'REJ_NO_USABLE_ISBN', problems = ('EMPTY', 'NOT_AN_ISBN'), repairs = None
+warnings = None
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-5_vi51zo/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-5_vi51zo/input-1.csv', 'loaded': 0, 'rejected': 1, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 0, updated 0, skipped 0, rejected 1, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-5_vi51zo/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-5_vi51zo/test-ingestion-log.json (run 1)
+__________________ test_single_row_example[example_36_loaded] __________________
+
+sandbox = <conftest.Sandbox object at 0x101ea25e0>, n = 36, isbn = '195170342'
+isbn13 = '195170342.0', outcome = 'loaded'
+stored = ('0195170342', '9780195170344'), code = None, problems = (None, None)
+repairs = {'isbn': ['R_PADDED_ZEROS']}
+warnings = [('W_ISBN13_UNUSABLE', 'WRONG_LENGTH'), ('W_ISBN13_CALCULATED', None)]
+
+    @pytest.mark.parametrize(
+        "n, isbn, isbn13, outcome, stored, code, problems, repairs, warnings",
+        SINGLE_ROW_EXAMPLES,
+    )
+    def test_single_row_example(sandbox, n, isbn, isbn13, outcome, stored, code,
+                                problems, repairs, warnings):
+        entry = sandbox.run_rows([book_row(isbn, isbn13)])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, problems=problems,
+                  repairs=repairs, warnings=warnings)
+
+tests/test_rules_examples.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-z6totyjf/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-z6totyjf/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 1, loaded 1, updated 0, skipped 0, rejected 0, repairs 1, warnings 1
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-z6totyjf/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-z6totyjf/test-ingestion-log.json (run 1)
+_____________ test_example_with_existing_books[example_26_skipped] _____________
+
+seeded_sandbox = <conftest.Sandbox object at 0x101e730d0>, n = 26
+row = {'authors': 'Suzanne Collins', 'average_rating': '4.34', 'best_book_id': '2767052', 'book_id': '1', ...}
+outcome = 'skipped', code = None, changed_fields = None
+
+    @pytest.mark.parametrize("n, row, outcome, code, changed_fields", SEEDED_EXAMPLES)
+    def test_example_with_existing_books(seeded_sandbox, n, row, outcome, code, changed_fields):
+        before = seeded_sandbox.books()
+    
+        entry = seeded_sandbox.run_rows([row])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, changed_fields=changed_fields)
+
+tests/test_rules_examples.py:199: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-2.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-pcxjpyry/input-2.csv', 'loaded': 0, 'rejected': 0, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-2.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-pcxjpyry/input-2.csv', 'loaded': 0, 'rejected': 0, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+---------------------------- Captured stdout setup -----------------------------
+input-1.csv: read 2, loaded 2, updated 0, skipped 0, rejected 0, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-pcxjpyry/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-pcxjpyry/test-ingestion-log.json (run 1)
+----------------------------- Captured stdout call -----------------------------
+input-2.csv: read 1, loaded 0, updated 0, skipped 1, rejected 0, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-pcxjpyry/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-pcxjpyry/test-ingestion-log.json (run 2)
+_____________ test_example_with_existing_books[example_27_skipped] _____________
+
+seeded_sandbox = <conftest.Sandbox object at 0x101d3c550>, n = 27
+row = {'authors': 'Suzanne Collins', 'average_rating': '4.34', 'best_book_id': '2767052', 'book_id': '1', ...}
+outcome = 'skipped', code = None, changed_fields = None
+
+    @pytest.mark.parametrize("n, row, outcome, code, changed_fields", SEEDED_EXAMPLES)
+    def test_example_with_existing_books(seeded_sandbox, n, row, outcome, code, changed_fields):
+        before = seeded_sandbox.books()
+    
+        entry = seeded_sandbox.run_rows([row])
+    
+>       check_counts(entry, 1, **{outcome: 1})
+
+tests/test_rules_examples.py:198: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-2.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-n1htgf00/input-2.csv', 'loaded': 0, 'rejected': 0, ...}
+rows_read = 1, expected = {'skipped': 1}
+@py_assert2 = {'loaded': 0, 'rejected': 0, 'skipped': 1, 'updated': 0}
+@py_assert4 = None, @py_assert6 = None
+actual = {'loaded': 0, 'rejected': 0, 'skipped': 0, 'updated': 1}
+@py_assert1 = False
+
+    def check_counts(entry, rows_read, **expected):
+        assert field(entry, "rows_read") == rows_read
+        actual = {name: field(entry, name) for name in COUNT_FIELDS}
+>       assert actual == {name: expected.get(name, 0) for name in COUNT_FIELDS}
+E       AssertionError: assert {'loaded': 0,... 'updated': 1} == {'loaded': 0,... 'updated': 0}
+E         
+E         Omitting 2 identical items, use -vv to show
+E         Differing items:
+E         {'skipped': 0} != {'skipped': 1}
+E         {'updated': 1} != {'updated': 0}
+E         
+E         Full diff:...
+E         
+E         ...Full output truncated (12 lines hidden), use '-vv' to show
+
+tests/test_rules_examples.py:78: AssertionError
+---------------------------- Captured stdout setup -----------------------------
+input-1.csv: read 2, loaded 2, updated 0, skipped 0, rejected 0, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-n1htgf00/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-n1htgf00/test-ingestion-log.json (run 1)
+----------------------------- Captured stdout call -----------------------------
+input-2.csv: read 1, loaded 0, updated 1, skipped 0, rejected 0, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-n1htgf00/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-n1htgf00/test-ingestion-log.json (run 2)
+_____________ test_example_with_existing_books[example_28_updated] _____________
+
+seeded_sandbox = <conftest.Sandbox object at 0x101d4cd00>, n = 28
+row = {'authors': 'Suzanne Collins', 'average_rating': '4.34', 'best_book_id': '2767052', 'book_id': '1', ...}
+outcome = 'updated', code = None, changed_fields = ['ratings_count']
+
+    @pytest.mark.parametrize("n, row, outcome, code, changed_fields", SEEDED_EXAMPLES)
+    def test_example_with_existing_books(seeded_sandbox, n, row, outcome, code, changed_fields):
+        before = seeded_sandbox.books()
+    
+        entry = seeded_sandbox.run_rows([row])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, changed_fields=changed_fields)
+
+tests/test_rules_examples.py:199: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-2.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-3r9sgfc7/input-2.csv', 'loaded': 0, 'rejected': 0, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-2.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-3r9sgfc7/input-2.csv', 'loaded': 0, 'rejected': 0, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+---------------------------- Captured stdout setup -----------------------------
+input-1.csv: read 2, loaded 2, updated 0, skipped 0, rejected 0, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-3r9sgfc7/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-3r9sgfc7/test-ingestion-log.json (run 1)
+----------------------------- Captured stdout call -----------------------------
+input-2.csv: read 1, loaded 0, updated 1, skipped 0, rejected 0, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-3r9sgfc7/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-3r9sgfc7/test-ingestion-log.json (run 2)
+____________ test_example_with_existing_books[example_29_rejected] _____________
+
+seeded_sandbox = <conftest.Sandbox object at 0x101f59d90>, n = 29
+row = {'authors': 'Suzanne Collins', 'average_rating': '4.34', 'best_book_id': '2767052', 'book_id': '1', ...}
+outcome = 'rejected', code = 'REJ_ISBN_BELONGS_TO_DIFFERENT_BOOK'
+changed_fields = None
+
+    @pytest.mark.parametrize("n, row, outcome, code, changed_fields", SEEDED_EXAMPLES)
+    def test_example_with_existing_books(seeded_sandbox, n, row, outcome, code, changed_fields):
+        before = seeded_sandbox.books()
+    
+        entry = seeded_sandbox.run_rows([row])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, changed_fields=changed_fields)
+
+tests/test_rules_examples.py:199: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-2.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-82ji78d4/input-2.csv', 'loaded': 0, 'rejected': 1, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-2.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-82ji78d4/input-2.csv', 'loaded': 0, 'rejected': 1, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+---------------------------- Captured stdout setup -----------------------------
+input-1.csv: read 2, loaded 2, updated 0, skipped 0, rejected 0, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-82ji78d4/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-82ji78d4/test-ingestion-log.json (run 1)
+----------------------------- Captured stdout call -----------------------------
+input-2.csv: read 1, loaded 0, updated 0, skipped 0, rejected 1, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-82ji78d4/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-82ji78d4/test-ingestion-log.json (run 2)
+____________ test_example_with_existing_books[example_30_rejected] _____________
+
+seeded_sandbox = <conftest.Sandbox object at 0x101d456a0>, n = 30
+row = {'authors': 'Collins, Suzanne', 'average_rating': '4.34', 'best_book_id': '2767052', 'book_id': '1', ...}
+outcome = 'rejected', code = 'REJ_ISBN_BELONGS_TO_DIFFERENT_BOOK'
+changed_fields = None
+
+    @pytest.mark.parametrize("n, row, outcome, code, changed_fields", SEEDED_EXAMPLES)
+    def test_example_with_existing_books(seeded_sandbox, n, row, outcome, code, changed_fields):
+        before = seeded_sandbox.books()
+    
+        entry = seeded_sandbox.run_rows([row])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, changed_fields=changed_fields)
+
+tests/test_rules_examples.py:199: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-2.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-yg0r6asg/input-2.csv', 'loaded': 0, 'rejected': 1, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-2.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-yg0r6asg/input-2.csv', 'loaded': 0, 'rejected': 1, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+---------------------------- Captured stdout setup -----------------------------
+input-1.csv: read 2, loaded 2, updated 0, skipped 0, rejected 0, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-yg0r6asg/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-yg0r6asg/test-ingestion-log.json (run 1)
+----------------------------- Captured stdout call -----------------------------
+input-2.csv: read 1, loaded 0, updated 0, skipped 0, rejected 1, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-yg0r6asg/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-yg0r6asg/test-ingestion-log.json (run 2)
+____________ test_example_with_existing_books[example_31_rejected] _____________
+
+seeded_sandbox = <conftest.Sandbox object at 0x101f59640>, n = 31
+row = {'authors': 'Suzanne Collins', 'average_rating': '4.34', 'best_book_id': '2767052', 'book_id': '1', ...}
+outcome = 'rejected', code = 'REJ_ISBN_BELONGS_TO_DIFFERENT_BOOK'
+changed_fields = None
+
+    @pytest.mark.parametrize("n, row, outcome, code, changed_fields", SEEDED_EXAMPLES)
+    def test_example_with_existing_books(seeded_sandbox, n, row, outcome, code, changed_fields):
+        before = seeded_sandbox.books()
+    
+        entry = seeded_sandbox.run_rows([row])
+    
+        check_counts(entry, 1, **{outcome: 1})
+>       check_row(entry, 2, outcome, code=code, changed_fields=changed_fields)
+
+tests/test_rules_examples.py:199: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-2.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-3otwwk07/input-2.csv', 'loaded': 0, 'rejected': 1, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-2.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-3otwwk07/input-2.csv', 'loaded': 0, 'rejected': 1, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+---------------------------- Captured stdout setup -----------------------------
+input-1.csv: read 2, loaded 2, updated 0, skipped 0, rejected 0, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-3otwwk07/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-3otwwk07/test-ingestion-log.json (run 1)
+----------------------------- Captured stdout call -----------------------------
+input-2.csv: read 1, loaded 0, updated 0, skipped 0, rejected 1, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-3otwwk07/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-3otwwk07/test-ingestion-log.json (run 2)
+___________ test_example_32_identical_repeat_in_same_file_is_skipped ___________
+
+sandbox = <conftest.Sandbox object at 0x101eec790>
+
+    def test_example_32_identical_repeat_in_same_file_is_skipped(sandbox):
+        entry = sandbox.run_rows([BOOK_A, BOOK_A])
+    
+        check_counts(entry, 2, loaded=1, skipped=1)
+>       check_row(entry, 2, "loaded")
+
+tests/test_rules_examples.py:229: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-xivcmpyj/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-xivcmpyj/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 2, loaded 1, updated 0, skipped 1, rejected 0, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-xivcmpyj/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-xivcmpyj/test-ingestion-log.json (run 1)
+_____ test_example_33_repeat_with_different_title_in_same_file_is_rejected _____
+
+sandbox = <conftest.Sandbox object at 0x101ee3f70>
+
+    def test_example_33_repeat_with_different_title_in_same_file_is_rejected(sandbox):
+        entry = sandbox.run_rows([BOOK_A, book_row(A10, A13, title="Catching Fire")])
+    
+        check_counts(entry, 2, loaded=1, rejected=1)
+>       check_row(entry, 2, "loaded")
+
+tests/test_rules_examples.py:240: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-mcd420_i/input-1.csv', 'loaded': 1, 'rejected': 1, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-mcd420_i/input-1.csv', 'loaded': 1, 'rejected': 1, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 2, loaded 1, updated 0, skipped 0, rejected 1, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-mcd420_i/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-mcd420_i/test-ingestion-log.json (run 1)
+________ test_example_34_changed_repeat_in_same_file_updates_last_wins _________
+
+sandbox = <conftest.Sandbox object at 0x101d49f10>
+
+    def test_example_34_changed_repeat_in_same_file_updates_last_wins(sandbox):
+        entry = sandbox.run_rows([BOOK_A, book_row(A10, A13, ratings_count="4780654")])
+    
+        check_counts(entry, 2, loaded=1, updated=1)
+>       check_row(entry, 2, "loaded")
+
+tests/test_rules_examples.py:252: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rules_examples.py:42: in check_row
+    found = entries_for(entry, list_name, line)
+tests/test_rules_examples.py:34: in entries_for
+    return [e for e in field(entry, list_name) if e.get("line") == line]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-5olph5jt/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+name = 'updated_rows'
+
+    def field(entry, name):
+>       assert name in entry, f"log entry has no {name!r} field (rules.md section 4)"
+E       AssertionError: log entry has no 'updated_rows' field (rules.md section 4)
+E       assert 'updated_rows' in {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-5olph5jt/input-1.csv', 'loaded': 1, 'rejected': 0, ...}
+
+tests/test_rules_examples.py:29: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 2, loaded 1, updated 1, skipped 0, rejected 0, repairs 0, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-5olph5jt/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-5olph5jt/test-ingestion-log.json (run 1)
+_____________________ test_example_35_same_file_run_twice ______________________
+
+sandbox = <conftest.Sandbox object at 0x101e723a0>
+
+    def test_example_35_same_file_run_twice(sandbox):
+        csv_path = sandbox.write_csv([
+            book_row("0439023483", "9780439023481"),  # example 1
+            book_row("19", ""),                        # example 8
+            book_row("", "9791234567896"),             # example 22
+        ])
+    
+        first = sandbox.run(csv_path)
+        log_after_first = sandbox.log()
+        books_after_first = sandbox.books()
+        second = sandbox.run(csv_path)
+    
+>       check_counts(first, 3, loaded=2, rejected=1)
+
+tests/test_rules_examples.py:274: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+entry = {'csv_file': 'input-1.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-e3v57hob/input-1.csv', 'loaded': 3, 'rejected': 0, ...}
+rows_read = 3, expected = {'loaded': 2, 'rejected': 1}
+@py_assert2 = {'loaded': 2, 'rejected': 1, 'skipped': 0, 'updated': 0}
+@py_assert4 = None, @py_assert6 = None
+actual = {'loaded': 3, 'rejected': 0, 'skipped': 0, 'updated': 0}
+@py_assert1 = False
+
+    def check_counts(entry, rows_read, **expected):
+        assert field(entry, "rows_read") == rows_read
+        actual = {name: field(entry, name) for name in COUNT_FIELDS}
+>       assert actual == {name: expected.get(name, 0) for name in COUNT_FIELDS}
+E       AssertionError: assert {'loaded': 3,... 'updated': 0} == {'loaded': 2,... 'updated': 0}
+E         
+E         Omitting 2 identical items, use -vv to show
+E         Differing items:
+E         {'loaded': 3} != {'loaded': 2}
+E         {'rejected': 0} != {'rejected': 1}
+E         
+E         Full diff:...
+E         
+E         ...Full output truncated (12 lines hidden), use '-vv' to show
+
+tests/test_rules_examples.py:78: AssertionError
+----------------------------- Captured stdout call -----------------------------
+input-1.csv: read 3, loaded 3, updated 0, skipped 0, rejected 0, repairs 1, warnings 1
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-e3v57hob/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-e3v57hob/test-ingestion-log.json (run 1)
+input-1.csv: read 3, loaded 0, updated 0, skipped 3, rejected 0, repairs 1, warnings 0
+Database: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-e3v57hob/test.db
+Log: /var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-e3v57hob/test-ingestion-log.json (run 2)
+_____________ test_row_lists_match_their_counts[books.csv (run 1)] _____________
+
+readme_sequence = {'books': [[{'authors': 'Kahlil Gibran', 'average_rating': '4.22', 'best_book_id': '2547', 'book_id': '489', ...}, {'a...folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-47ui3d5_/books-batch2.csv', 'loaded': 8, 'rejected': 8, ...}]]}
+run_index = 0
+
+    @pytest.mark.parametrize("run_index", range(3), ids=RUN_NAMES)
+    def test_row_lists_match_their_counts(readme_sequence, run_index):
+        """rules.md 4.2: the rejected, skipped and updated lists match their counts."""
+        entry = readme_sequence["entries"][run_index]
+        for count_name, list_name in [("rejected", "rejected_rows"), ("skipped", "skipped_rows"),
+                                      ("updated", "updated_rows")]:
+>           assert list_name in entry, f"log entry has no {list_name!r} field"
+E           AssertionError: log entry has no 'updated_rows' field
+E           assert 'updated_rows' in {'csv_file': 'books.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-47ui3d5_/books.csv', 'loaded': 9266, 'rejected': 734, ...}
+
+tests/test_runs.py:106: AssertionError
+_____________ test_row_lists_match_their_counts[books.csv (run 2)] _____________
+
+readme_sequence = {'books': [[{'authors': 'Kahlil Gibran', 'average_rating': '4.22', 'best_book_id': '2547', 'book_id': '489', ...}, {'a...folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-47ui3d5_/books-batch2.csv', 'loaded': 8, 'rejected': 8, ...}]]}
+run_index = 1
+
+    @pytest.mark.parametrize("run_index", range(3), ids=RUN_NAMES)
+    def test_row_lists_match_their_counts(readme_sequence, run_index):
+        """rules.md 4.2: the rejected, skipped and updated lists match their counts."""
+        entry = readme_sequence["entries"][run_index]
+        for count_name, list_name in [("rejected", "rejected_rows"), ("skipped", "skipped_rows"),
+                                      ("updated", "updated_rows")]:
+>           assert list_name in entry, f"log entry has no {list_name!r} field"
+E           AssertionError: log entry has no 'updated_rows' field
+E           assert 'updated_rows' in {'csv_file': 'books.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-47ui3d5_/books.csv', 'loaded': 0, 'rejected': 734, ...}
+
+tests/test_runs.py:106: AssertionError
+_____________ test_row_lists_match_their_counts[books-batch2.csv] ______________
+
+readme_sequence = {'books': [[{'authors': 'Kahlil Gibran', 'average_rating': '4.22', 'best_book_id': '2547', 'book_id': '489', ...}, {'a...folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-47ui3d5_/books-batch2.csv', 'loaded': 8, 'rejected': 8, ...}]]}
+run_index = 2
+
+    @pytest.mark.parametrize("run_index", range(3), ids=RUN_NAMES)
+    def test_row_lists_match_their_counts(readme_sequence, run_index):
+        """rules.md 4.2: the rejected, skipped and updated lists match their counts."""
+        entry = readme_sequence["entries"][run_index]
+        for count_name, list_name in [("rejected", "rejected_rows"), ("skipped", "skipped_rows"),
+                                      ("updated", "updated_rows")]:
+>           assert list_name in entry, f"log entry has no {list_name!r} field"
+E           AssertionError: log entry has no 'updated_rows' field
+E           assert 'updated_rows' in {'csv_file': 'books-batch2.csv', 'csv_path': '/private/var/folders/5q/jr9w1c4j6l907y4tdb59t76c0000gn/T/ingest-test-47ui3d5_/books-batch2.csv', 'loaded': 8, 'rejected': 8, ...}
+
+tests/test_runs.py:106: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_rules_examples.py::test_single_row_example[example_01_loaded]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_02_loaded]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_03_loaded]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_04_loaded]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_05_loaded]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_06_loaded]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_07_loaded]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_08_rejected]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_09_rejected]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_10_loaded]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_11_rejected]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_12_loaded]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_13_rejected]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_14_loaded]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_15_loaded]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_16_rejected]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_17_loaded]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_18_rejected]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_19_rejected]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_20_rejected]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_21_rejected]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_22_loaded]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_23_rejected]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_24_loaded]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_25_rejected]
+FAILED tests/test_rules_examples.py::test_single_row_example[example_36_loaded]
+FAILED tests/test_rules_examples.py::test_example_with_existing_books[example_26_skipped]
+FAILED tests/test_rules_examples.py::test_example_with_existing_books[example_27_skipped]
+FAILED tests/test_rules_examples.py::test_example_with_existing_books[example_28_updated]
+FAILED tests/test_rules_examples.py::test_example_with_existing_books[example_29_rejected]
+FAILED tests/test_rules_examples.py::test_example_with_existing_books[example_30_rejected]
+FAILED tests/test_rules_examples.py::test_example_with_existing_books[example_31_rejected]
+FAILED tests/test_rules_examples.py::test_example_32_identical_repeat_in_same_file_is_skipped
+FAILED tests/test_rules_examples.py::test_example_33_repeat_with_different_title_in_same_file_is_rejected
+FAILED tests/test_rules_examples.py::test_example_34_changed_repeat_in_same_file_updates_last_wins
+FAILED tests/test_rules_examples.py::test_example_35_same_file_run_twice - As...
+FAILED tests/test_runs.py::test_row_lists_match_their_counts[books.csv (run 1)]
+FAILED tests/test_runs.py::test_row_lists_match_their_counts[books.csv (run 2)]
+FAILED tests/test_runs.py::test_row_lists_match_their_counts[books-batch2.csv]
+======================== 39 failed, 15 passed in 2.06s =========================
